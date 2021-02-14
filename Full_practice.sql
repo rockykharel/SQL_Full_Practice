@@ -326,8 +326,13 @@ UPDATE invoices
 SET payment_total=10, payment_date='2019-03-01'
 WHERE invoice_id=1;
 
+----------------------------------------------------------------------------------------------
 
-
+-- USING GROUP BY FUNCTION --
+USE sql_invoicing;
+SELECT client_id, AVG(invoice_total)
+FROM invoices
+GROUP BY client_id;
 
 
 
