@@ -334,6 +334,11 @@ SELECT client_id, AVG(invoice_total)
 FROM invoices
 GROUP BY client_id;
 
+--USING GROUP BY FUNCTION WITH HAVING CLAUSE --
+SELECT AVG(invoice_total), MAX(invoice_total), MIN(invoice_total), client_id
+FROM invoices
+GROUP BY client_id
+HAVING AVG(invoice_total)> 111; -- (we can't use WHERE clause while using GROUP BY clause)
 
 
 
